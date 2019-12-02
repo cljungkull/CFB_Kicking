@@ -28,16 +28,16 @@ var chartGroup = svg.append("g")
 
 // Initial Params
 var acsData = null;  // Store the chart data
-var chosenXAxis = "pollution";  // Default initial x-axis label
-var chosenYAxis = "traffic";  // Default initial y-axis label
-var xAxisLabels = ["pollution", "poverty", "cars"];  // Default 
-var yAxisLabels = ["traffic", "asthma", "density"];
-var labelsTitle = { "pollution": "Pollution", 
-                    "poverty": "Poverty", 
-                    "cars": "Cars per Household",
-                    "traffic": "Traffic Burden", 
-                    "asthma": "Asthma Cases", 
-                    "density": "Household Density" };
+var chosenXAxis = "Scoring";  // Default initial x-axis label
+var chosenYAxis = "4th Down";  // Default initial y-axis label
+var xAxisLabels = ["FGs", "Points", "Points Per Game"];  // Default 
+var yAxisLabels = ["4th Conv", "4th Att", "Conv Pct"];
+var labelsTitle = { "fg": "FGs", 
+                    "pts": "Points", 
+                    "ppg": "Points Per Game",
+                    "4th_conv": "4th Conv", 
+                    "4th_att": "4th Att", 
+                    ".pct": "Conv Pct" };
 var axisPadding = 20;
 
 // function used for xy-scale var upon click on axis label text
@@ -397,18 +397,18 @@ function init() {
 };
 
 // Load data from data.csv
-d3.csv("./data.csv", function(error, data) {
+d3.csv("./CFB_4th_down_conv.csv", function(error, data) {
     // Throw an error if one occurs
     if (error) return console.warn(error);
   
     // Parse data: Cast the data values to a number
     data.forEach(d => {
-      d.pollution = +d.pollution;
-      d.poverty = +d.poverty;
-      d.cars = +d.cars;
-      d.traffic = +d.traffic;
-      d.density = +d.density;
-      d.asthma = +d.asthma;
+      d.4th_conv = +d.4th_conv;
+      d.4th_att = +d.4th_att;
+      d..pct = +d..pct;
+      d.fg = +d.fg;
+      d.pts = +d.pts;
+      d.ppg = +d.ppg;
     });
 
     // Load data into acsData
