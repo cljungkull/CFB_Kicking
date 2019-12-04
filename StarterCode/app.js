@@ -32,12 +32,12 @@ var chosenXAxis = "Scoring";  // Default initial x-axis label
 var chosenYAxis = "4th Down";  // Default initial y-axis label
 var xAxisLabels = ["FGs", "Points", "Points Per Game"];  // Default 
 var yAxisLabels = ["4th Conv", "4th Att", "Conv Pct"];
-var labelsTitle = {"fg": "FGs", 
+var labelsTitle = { "fg": "FGs", 
                     "pts": "Points", 
                     "ppg": "Points Per Game",
-                    "fourth_conv": "4th Conv", 
-                    "fourth_att": "4th Att", 
-                    "pct": "Conv Pct" };
+                    "4th_conv": "4th Conv", 
+                    "4th_att": "4th Att", 
+                    ".pct": "Conv Pct" };
 var axisPadding = 20;
 
 // function used for xy-scale var upon click on axis label text
@@ -403,9 +403,9 @@ d3.csv("./CFB_4th_down_conv.csv", function(error, data) {
   
     // Parse data: Cast the data values to a number
     data.forEach(d => {
-      d.fourth_conv = +d.fourth_conv;
-      d.fourth_att = +d.fourth_att;
-      d.pct = +d.pct;
+      d.4th_conv = +d.4th_conv;
+      d.4th_att = +d.4th_att;
+      d..pct = +d..pct;
       d.fg = +d.fg;
       d.pts = +d.pts;
       d.ppg = +d.ppg;
